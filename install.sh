@@ -48,12 +48,14 @@ if [ "$c" == "supernode" ];then
 	touch /usr/n2n/supernode.sh
 	echo "/usr/n2n/supernode -l $port">/usr/n2n/supernode.sh
 	cp supernode /usr/n2n/
+	chmod +x /usr/n2n/supernode.sh
 	/usr/n2n/supernode.sh
 	echo -e "start supernode"
 elif [ "$c" == "edge" ];then
 	touch /usr/n2n/edge.sh
 	echo "/usr/n2n/edge -d $nname -c $name -k $password -a $address -l $ip:$port">/usr/n2n/edge.sh
 	cp edge /usr/n2n
+	chmod +x /usr/n2n/edge.sh
 	/usr/n2n/edge.sh
 	echo -e "start edge"
 fi
